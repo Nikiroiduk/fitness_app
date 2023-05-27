@@ -15,6 +15,10 @@ class Preferences {
 
   Preferences({required this.sharedPreferences});
 
+  authRemove(String key) => sharedPreferences.remove(key);
+  authSet(String key, String value) => sharedPreferences.setString(key, value);
+  authGet(String key) => sharedPreferences.getString(key);
+
   persistThemeMode(ThemeMode mode) =>
       sharedPreferences.setString('themeMode', mode.toString());
 
