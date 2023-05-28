@@ -52,8 +52,6 @@ class AuthNotifier extends AsyncNotifier<User?> {
   }
 
   Future<User?> _loginWithToken(String token) async {
-    // TODO: remove delay
-    await Future.delayed(const Duration(seconds: 1));
     // final logInAttempt = await Future(
     //   // zalupa
     //   () => true,
@@ -66,7 +64,7 @@ class AuthNotifier extends AsyncNotifier<User?> {
     if (logInAttempt) {
       // Returning data recieved by token
       return await Future.delayed(
-        const Duration(seconds: 1),
+        const Duration(seconds: 2),
         () => User(
           name: 'Name',
           email: 'some@email.com',
@@ -85,6 +83,9 @@ class AuthNotifier extends AsyncNotifier<User?> {
   }
 
   Future<void> login(String email, String password) async {
+    //await Future.delayed(const Duration(seconds: 2));
+    //state = const AsyncUser.data(null);
+    //return;
     // Successful login attempt
     state = await AsyncUser.guard(() async {
       return Future.delayed(

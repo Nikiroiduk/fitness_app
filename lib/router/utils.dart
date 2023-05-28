@@ -1,21 +1,24 @@
-enum Pages {
+enum Screens {
   splash,
   settings,
   auth,
   home,
+  test,
 }
 
-extension AppPagesExtension on Pages {
+extension AppPagesExtension on Screens {
   String get path {
     switch (this) {
-      case Pages.splash:
+      case Screens.splash:
         return '/splash';
-      case Pages.auth:
+      case Screens.auth:
         return '/auth';
-      case Pages.settings:
+      case Screens.settings:
         return 'settings';
-      case Pages.home:
+      case Screens.home:
         return '/home';
+      case Screens.test:
+        return '/test';
       default:
         return '/';
     }
@@ -23,14 +26,16 @@ extension AppPagesExtension on Pages {
 
   String get name {
     switch (this) {
-      case Pages.splash:
+      case Screens.splash:
         return 'splash';
-      case Pages.auth:
+      case Screens.auth:
         return 'auth';
-      case Pages.settings:
+      case Screens.settings:
         return 'settings';
-      case Pages.home:
+      case Screens.home:
         return 'home';
+      case Screens.test:
+        return 'test';
       default:
         return '';
     }
@@ -38,14 +43,16 @@ extension AppPagesExtension on Pages {
 
   String get title {
     switch (this) {
-      case Pages.splash:
+      case Screens.splash:
         return 'Splash';
-      case Pages.auth:
+      case Screens.auth:
         return 'Auth';
-      case Pages.settings:
+      case Screens.settings:
         return 'Settings';
-      case Pages.home:
+      case Screens.home:
         return 'Home';
+      case Screens.test:
+        return 'Test';
       default:
         return '';
     }

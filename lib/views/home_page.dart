@@ -1,4 +1,4 @@
-import 'package:fitness_app/services/auth/auth.dart';
+import 'package:fitness_app/services/auth/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              context.goNamed(Pages.settings.name);
+              context.goNamed(Screens.settings.name);
             },
             icon: const Icon(Icons.settings_rounded),
           ),
